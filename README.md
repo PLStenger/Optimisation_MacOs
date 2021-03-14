@@ -1,8 +1,7 @@
 # Optimisation_MacOs
 Enlarging networking buffers, quicker Safari, opening files and folder quicker, etc.
 
-#################################################
-# Enlarging networking buffers
+## Enlarging networking buffers
 
 From https://www.youtube.com/watch?v=UbYj2BzGNFg&t=185s
 
@@ -17,28 +16,28 @@ From https://www.youtube.com/watch?v=UbYj2BzGNFg&t=185s
     # (-w fichier = Vrai si le fichier existe et est accessible en écriture. # http://manpagesfr.free.fr/man/man1/bash.1.html)
 
 
-# https://rsmith.home.xs4all.nl/freebsd/enlarging-networking-buffers.html
-# In the hope of increasing networking performance, I’ve set the following sysctls in /etc/sysctl.conf;
+    # https://rsmith.home.xs4all.nl/freebsd/enlarging-networking-buffers.html
+    # In the hope of increasing networking performance, I’ve set the following sysctls in /etc/sysctl.conf;
 
-# Increase send/receive buffer maximums from 256KB to 16MB.
-# FreeBSD 7.x and later will auto-tune the size, but only up to the max.
-net.inet.tcp.sendbuf_max=16777216
-# marche pas meme avec sysctl -w 
-net.inet.tcp.recvbuf_max=16777216
-# marche pas meme avec sysctl -w 
+       # Increase send/receive buffer maximums from 256KB to 16MB.
+     # FreeBSD 7.x and later will auto-tune the size, but only up to the max.
+        net.inet.tcp.sendbuf_max=16777216
+        # marche pas meme avec sysctl -w 
+        net.inet.tcp.recvbuf_max=16777216
+        # marche pas meme avec sysctl -w 
 
-# Double send/receive TCP datagram memory allocation.  This defines the
-# amount of memory taken up by default *per socket*.
-# net.inet.tcp.sendspace=65536
-# Deja fait plus haut
-sysctl -w net.inet.tcp.recvspace=131072
-# Give net.inet.tcp.recvspace: 65536 -> 131072
+        # Double send/receive TCP datagram memory allocation.  This defines the
+        # amount of memory taken up by default *per socket*.
+        # net.inet.tcp.sendspace=65536
+        # Deja fait plus haut
+        sysctl -w net.inet.tcp.recvspace=131072
+        # Give net.inet.tcp.recvspace: 65536 -> 131072
 
-# Enlarge buffers for BPF device.
-# sysctl net.bpf.bufsize=65536
-# deja fait plus haut
-sysctl net.bpf.maxbufsize=524288
-# marche pas
+        # Enlarge buffers for BPF device.
+        # sysctl net.bpf.bufsize=65536
+        # deja fait plus haut
+        sysctl net.bpf.maxbufsize=524288
+        # marche pas
 
 #################################################
 #Afin d’afficher plus vite vos photos et autres fichiers lorsque vous utilisez l’aperçu, collez celle-ci et redémarrez votre mac.

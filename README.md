@@ -5,8 +5,8 @@ Enlarging networking buffers, quicker Safari, opening files and folder quicker, 
 # Enlarging networking buffers
 
 From https://www.youtube.com/watch?v=UbYj2BzGNFg&t=185s
-  sudo -s
-    sysctl -w net.inet.tcp.recvspace=65536
+`sudo -s
+sysctl -w net.inet.tcp.recvspace=65536`
 # give net.inet.tcp.recvspace: 131072 -> 65536
 sysctl -w net.inet.tcp.sendspace=65536
 # give net.inet.tcp.sendspace: 131072 -> 65536
